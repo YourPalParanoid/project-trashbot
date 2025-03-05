@@ -1,4 +1,6 @@
 #include<Servo.h> 
+#include"LCD.h"
+
 Servo servo; 
 
 int const openTrigPin = 6; // Green
@@ -11,6 +13,8 @@ int const motorPin = 3; // Motor
 
 void setup() 
 { 
+  initLCD();
+
   pinMode(openTrigPin, OUTPUT);  
   pinMode(openEchoPin, INPUT);
   pinMode(fillTrigPin, OUTPUT);  
@@ -23,6 +27,8 @@ void setup()
 } 
 void loop() 
 {        
+  runLCD();
+
   int open_Duration, open_Distance; 
   digitalWrite(openTrigPin, HIGH);  
   delay(1); 
